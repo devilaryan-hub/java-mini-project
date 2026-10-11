@@ -1,0 +1,6 @@
+1001,Alice Smith,1234,1000.00
+1002,Bob Johnson,5678,800.00
+0000,pot yu,0000,62.00
+2001,Charlie Brown,9999,700.00
+1234,alok yadav,0000,88.00
+0001,Shivam Gupta,0001,400.00

@@ -1,0 +1,13 @@
+# Compiled Java class files
+*.class
+BankJavaApp/*.class
+
+# Large binary files
+cloudflared.exe
+*.exe
+
+# Log files
+*.log
+
+# Scratch HTML files
+code_document.html

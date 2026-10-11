@@ -1,0 +1,87 @@
+<!--
+  index.html
+  
+  Purpose:
+  Official Landing Page / Home Page for Apex National Bank Web System.
+  Welcomes visitors, showcases key banking features, and provides direct links to
+  Account Login and New Account Registration.
+  
+  Target Audience: 2nd-Year Engineering Students learning Web Design & Navigation.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex National Bank - Modern Online Banking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            🏛️ Apex National Bank
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Open Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero / Main Section -->
+    <main class="container" style="margin-top: 3rem;">
+        <div class="card" style="text-align: center; padding: 3.5rem 2rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+            <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;">
+                Simple, Secure & Smart Banking
+            </h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 2rem auto;">
+                Welcome to Apex National Bank. Manage your money, transfer funds securely in real-time, deposit cash, and view your complete transaction history from any device.
+            </p>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+                <a href="login.html" class="btn btn-primary" style="width: auto; padding: 0.85rem 2.25rem; font-size: 1.05rem;">
+                    Sign In to Portal &rarr;
+                </a>
+                <a href="register.html" class="btn btn-outline" style="width: auto; padding: 0.85rem 2.25rem; font-size: 1.05rem;">
+                    Open New Account
+                </a>
+            </div>
+
+            <!-- Features Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: left; margin-top: 2rem;">
+                <div style="padding: 1.5rem; background: white; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem;">Instant Transfers</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Transfer funds between accounts with instant balance updates and verification.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: white; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔒</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem;">PIN Protection</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">All debit and transfer operations require 4-digit security PIN verification.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: white; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📜</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem;">Mini Statements</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Detailed audit logs with timestamps, transaction IDs, and contextual notes.</p>
+                </div>
+
+                <div style="padding: 1.5rem; background: white; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💾</div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem;">Persistent Data</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Data is automatically persisted to file storage via the Core Java backend.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Apex National Bank &bull; Powered by Java Core HttpServer & Web UI
+    </footer>
+
+</body>
+</html>

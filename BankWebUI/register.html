@@ -1,0 +1,122 @@
+<!--
+  register.html
+  
+  Purpose:
+  Interactive New Account Registration screen.
+  Submits new customer data to /api/register via app.js to create accounts in the Java backend.
+  
+  Target Audience: 2nd-Year Engineering Students learning Web Frontend & Java Backend Integration.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Account - Apex National Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            🏛️ Apex National Bank
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html" class="active">Open Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Registration Container -->
+    <main class="auth-container">
+        <div class="card">
+            <div class="card-header">
+                <h2>Open New Account</h2>
+                <p>Register online to start banking with Apex</p>
+            </div>
+
+            <!-- Registration Form (Handled by app.js) -->
+            <form id="registerForm">
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="holderName">Account Holder Full Name</label>
+                    <input 
+                        type="text" 
+                        id="holderName" 
+                        name="holderName" 
+                        class="form-control" 
+                        placeholder="e.g. Alice Smith" 
+                        required 
+                        minlength="2"
+                    >
+                </div>
+
+                <!-- Account Number -->
+                <div class="form-group">
+                    <label for="accountNumber">Desired Account Number</label>
+                    <input 
+                        type="text" 
+                        id="accountNumber" 
+                        name="accountNumber" 
+                        class="form-control" 
+                        placeholder="e.g. 1003" 
+                        required 
+                        pattern="[0-9A-Za-z]+"
+                    >
+                    <p class="form-help">Unique numeric identifier (e.g. 1003)</p>
+                </div>
+
+                <!-- Initial Deposit -->
+                <div class="form-group">
+                    <label for="initialDeposit">Initial Deposit ($)</label>
+                    <input 
+                        type="number" 
+                        id="initialDeposit" 
+                        name="initialDeposit" 
+                        class="form-control" 
+                        placeholder="500.00" 
+                        required 
+                        min="0" 
+                        step="0.01"
+                        value="100.00"
+                    >
+                    <p class="form-help">Opening balance (must be non-negative)</p>
+                </div>
+
+                <!-- PIN -->
+                <div class="form-group">
+                    <label for="pin">Create 4-Digit PIN</label>
+                    <input 
+                        type="password" 
+                        id="pin" 
+                        name="pin" 
+                        class="form-control" 
+                        placeholder="••••" 
+                        required 
+                        maxlength="6" 
+                        pattern="[0-9]{4,6}"
+                    >
+                    <p class="form-help">Your secret security PIN for withdrawals</p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                Already have an account? <a href="login.html">Sign in here</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Apex National Bank &bull; Powered by Java Core HttpServer & Web UI
+    </footer>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>

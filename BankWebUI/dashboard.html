@@ -1,0 +1,107 @@
+<!--
+  dashboard.html
+  
+  Purpose:
+  Interactive User Account Dashboard.
+  Displays live account balance, customer profile, quick action triggers (Deposit, Withdraw, Transfer),
+  and automatically renders dynamic mini statement transaction records fetched from /api/statement.
+  
+  Target Audience: 2nd-Year Engineering Students learning Dashboard Layouts & REST API Integration.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Dashboard - Apex National Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="dashboard.html" class="brand">
+            🏛️ Apex National Bank
+        </a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="transfer.html">Transfer Funds</a></li>
+            <li><a href="#" class="logout-btn">Sign Out</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container" id="dashboardView">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <div>
+                <h1>Hello, <span class="user-name">Customer</span> 👋</h1>
+                <p>Welcome to your personal online banking dashboard</p>
+            </div>
+            <div>
+                <a href="transfer.html" class="btn btn-primary" style="width: auto;">+ New Transfer</a>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid (Balance & Actions) -->
+        <div class="dashboard-grid">
+            <!-- Live Balance Card -->
+            <div class="balance-card">
+                <div class="label">Available Account Balance</div>
+                <div class="amount" id="accountBalance">$0.00</div>
+                <div class="acc-meta">
+                    <strong>Account No:</strong> <span class="user-acc">Loading...</span> &bull; <strong>Status:</strong> Active
+                </div>
+            </div>
+
+            <!-- Quick Actions Card -->
+            <div class="actions-card">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="handleQuickDeposit()">📥 Deposit</button>
+                    <button class="btn btn-outline" onclick="handleQuickWithdraw()">🏧 Withdraw</button>
+                    <a href="transfer.html" class="btn btn-outline">💸 Transfer</a>
+                    <a href="#statement" class="btn btn-outline">📜 Statement</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions / Mini Statement -->
+        <div class="card" id="statement">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="font-size: 1.25rem;">Recent Account Activity (Mini Statement)</h3>
+                <button class="btn btn-outline" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.8rem;" onclick="initDashboard()">🔄 Refresh</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Date & Time</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Remarks / Note</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statementTableBody">
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">
+                                Loading transaction records...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Apex National Bank &bull; Powered by Java Core HttpServer & Web UI
+    </footer>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
